@@ -34,6 +34,8 @@
       九州大学大学院工学府 機械工学専攻 博士課程<br>
       先端医療デバイス研究室（荒田純平教授）
     </p>
+    <video id="hero-video" class="hero-video" src="videos/herical.mp4"
+           autoplay muted playsinline preload="auto"></video>
   </section>
 
   <section class="news">
@@ -41,6 +43,10 @@
 
     <h3>2026年度</h3>
     <ul>
+      <li>
+        <span class="date">2026/09/04</span>
+        <span class="body">日本ロボット学会学術講演会 (RSJ2026)（金沢大学）にて「層間摩擦を考慮したスライドばね機構の変形予測モデル」の講演を行う予定です（3D4-04）。</span>
+      </li>
       <li>
         <span class="date">2026/04/01</span>
         <span class="body">博士課程に進学しました。九州大学 次世代研究者挑戦的研究プログラム 未来創造コース (K2-SPRING) の支援を受けています。</span>
@@ -54,6 +60,10 @@
         <span class="date">2025/09/XX</span>
         <span class="body">学振DC1は不採用となりました。いやー厳しい…</span>
       </li>
+      <li>
+        <span class="date">2025/06/06</span>
+        <span class="body">ROBOMECH2025（山形）にて「螺旋形状に巻き付くシート状グリッパ」のポスター発表を行いました（2P1-Q10）。</span>
+      </li>
     </ul>
 
     <h3>2024年度</h3>
@@ -63,13 +73,25 @@
         <span class="body">ICAM2024（福岡）にて口頭発表を行いました。</span>
       </li>
       <li>
-        <!-- TODO: 日付を修正 -->
-        <span class="date">2024/05/XX</span>
-        <span class="body">ROBOMECH2024にて講演を行いました。</span>
+        <span class="date">2024/05/31</span>
+        <span class="body">ROBOMECH2024（宇都宮）にて「遠隔駆動可能な上肢単関節リハビリテーションロボットの開発」のポスター発表を行いました（2P1-F03）。</span>
       </li>
     </ul>
   </section>
 </main>
+
+<script>
+  (function () {
+    var playlist = ["videos/herical.mp4", "videos/gripper.mp4", "videos/elbow_reha.mp4"];
+    var i = 0;
+    var v = document.getElementById("hero-video");
+    v.addEventListener("ended", function () {
+      i = (i + 1) % playlist.length;
+      v.src = playlist[i];
+      v.play();
+    });
+  })();
+</script>
 
 <footer class="site-footer">
   <div class="footer-inner">
