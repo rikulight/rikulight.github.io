@@ -1,0 +1,410 @@
+/* ============================================
+   Riku Kikuchi — Personal Academic Website
+   ============================================ */
+
+:root {
+  --accent: #8E1728;        /* 九州大学ワインレッド */
+  --accent-dark: #6E101F;
+  --text: #222222;
+  --text-muted: #666666;
+  --bg: #ffffff;
+  --bg-subtle: #faf8f8;
+  --border: #e5dede;
+  --max-width: 860px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", "Yu Gothic UI", Meiryo, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.9;
+  font-size: 16px;
+}
+
+/* ---------- Header / Navigation ---------- */
+
+.site-header {
+  border-top: 4px solid var(--accent);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+}
+
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.4rem 1.5rem 0;
+}
+
+.site-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.site-title a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.site-title .en {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-left: 0.6em;
+}
+
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem;
+  margin-top: 0.8rem;
+}
+
+.site-nav a {
+  display: block;
+  padding: 0.55rem 1rem;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.95rem;
+  border-bottom: 3px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.site-nav a:hover {
+  color: var(--accent);
+}
+
+.site-nav a.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  font-weight: 600;
+}
+
+/* ---------- Main layout ---------- */
+
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+
+.page-title {
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 2.2rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--accent);
+}
+
+.page-title .en {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-left: 0.7em;
+}
+
+h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--accent-dark);
+  margin: 2.6rem 0 1rem;
+  padding-left: 0.7rem;
+  border-left: 4px solid var(--accent);
+}
+
+h2:first-of-type {
+  margin-top: 0;
+}
+
+h2 .en {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-left: 0.6em;
+}
+
+h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 1.8rem 0 0.6rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--accent);
+}
+
+/* ---------- Home ---------- */
+
+.hero {
+  text-align: center;
+  padding: 1.5rem 0 2.5rem;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.hero .en-name {
+  display: block;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-top: 0.3rem;
+  letter-spacing: 0.08em;
+}
+
+.hero .tagline {
+  margin-top: 1.4rem;
+  font-size: 1.05rem;
+  color: var(--text);
+}
+
+.hero .affiliation {
+  margin-top: 0.8rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* ---------- What's New ---------- */
+
+.news h3 {
+  font-size: 1rem;
+  color: var(--accent-dark);
+  margin: 1.6rem 0 0.5rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.news ul {
+  list-style: none;
+}
+
+.news li {
+  display: flex;
+  gap: 1.2rem;
+  padding: 0.45rem 0.2rem;
+}
+
+.news .date {
+  flex: 0 0 6.2em;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+  padding-top: 0.1em;
+}
+
+.news .body {
+  flex: 1;
+}
+
+/* ---------- Profile ---------- */
+
+.profile-top {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.profile-photo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 3px solid var(--border);
+}
+
+.profile-intro .name {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.profile-intro .name .en {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-left: 0.6em;
+}
+
+.profile-intro .affiliation {
+  margin-top: 0.6rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+.profile-intro .email {
+  margin-top: 0.6rem;
+  font-size: 0.95rem;
+}
+
+dl.history div {
+  display: flex;
+  gap: 1.5rem;
+  padding: 0.5rem 0.2rem;
+  border-bottom: 1px dashed var(--border);
+}
+
+dl.history dt {
+  flex: 0 0 7em;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+dl.history dd {
+  flex: 1;
+}
+
+/* ---------- Publications ---------- */
+
+ol.pub-list {
+  padding-left: 1.5rem;
+}
+
+ol.pub-list li {
+  margin-bottom: 1.1rem;
+}
+
+.pub-empty {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  padding: 0.4rem 0.2rem;
+}
+
+/* ---------- Research ---------- */
+
+.research-section {
+  margin-bottom: 3rem;
+}
+
+figure.research-fig {
+  margin: 1.2rem 0;
+  text-align: center;
+}
+
+figure.research-fig .placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 240px;
+  background: var(--bg-subtle);
+  border: 1px dashed var(--border);
+  border-radius: 6px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+figure.research-fig img,
+figure.research-fig video {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  background: #000;
+}
+
+.video-row {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.video-row figure.research-fig {
+  flex: 1;
+  min-width: 0;
+}
+
+figure.research-fig figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  background: var(--bg-subtle);
+}
+
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 600px) {
+  body {
+    font-size: 15px;
+  }
+
+  .header-inner {
+    padding: 1.1rem 1rem 0;
+  }
+
+  .site-nav a {
+    padding: 0.5rem 0.7rem;
+    font-size: 0.9rem;
+  }
+
+  main {
+    padding: 2rem 1rem 3rem;
+  }
+
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .profile-top {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .news li {
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+
+  .news .date {
+    flex: none;
+  }
+
+  dl.history div {
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+
+  dl.history dt {
+    flex: none;
+  }
+
+  .video-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
