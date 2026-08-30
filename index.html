@@ -88,10 +88,23 @@
     var playlist = ["videos/herical.mp4", "videos/gripper.mp4", "videos/elbow_reha.mp4"];
     var i = 0;
     var v = document.getElementById("hero-video");
+
+    function tryPlay() {
+      var p = v.play();
+      if (p && p.catch) p.catch(function () {});
+    }
+
     v.addEventListener("ended", function () {
       i = (i + 1) % playlist.length;
       v.src = playlist[i];
-      v.play();
+      tryPlay();
+    });
+
+    // 自動再生がブロックされた環境では、最初の操作で再生を開始する
+    tryPlay();
+    document.addEventListener("pointerdown", function onFirstTouch() {
+      if (v.paused) tryPlay();
+      document.removeEventListener("pointerdown", onFirstTouch);
     });
   })();
 </script>
